@@ -145,7 +145,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
+# push到github時不會將以下檔案推上去帳號密碼就不會被公開
+credentials.py
 # pytype static type analyzer
 .pytype/
 
