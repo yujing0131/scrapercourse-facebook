@@ -22,5 +22,3 @@ password.send_keys(credentials.password)
 password.submit() #在密碼位置送出
 
 time.sleep(10)
-##將滑鼠移動到座標為(x,y)=(100,100)的位置上點擊左鍵關閉
-ActionChains(driver).move_by_offset(100,100).click().perform()
