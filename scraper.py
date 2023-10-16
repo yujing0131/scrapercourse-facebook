@@ -21,4 +21,10 @@ email.send_keys(credentials.email)
 password.send_keys(credentials.password)
 password.submit() #在密碼位置送出
 
-time.sleep(10)
+time.sleep(5)
+
+driver.get('https://www.facebook.com/ETtodayMOVIE')
+#設定滑鼠滾輪的次數
+for i in range(20):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+    time.sleep(3)
