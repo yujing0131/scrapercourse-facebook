@@ -28,10 +28,14 @@ for i in range(20):
     time.sleep(3)
 
 soup = BeautifulSoup(driver.page_source,'lxml')
-posts = soup.find_all("div",{"class":"x78zum5 xdt5ytf xz62fqu x16ldp7u"})
+
+posts = soup.find_all("div",{"data-ad-comet-preview":"message"})
+print(posts)
 result = []
 for post in posts:
-    content  = post.find("span",{"class","x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen xo1l8bm xzsf02u x1yc453h"})
+    content = post.find("span",{"class":"x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen xo1l8bm xzsf02u x1yc453h"})
+    print(content)
     result.append(content.getText())
-
+    
 print(result)
+
