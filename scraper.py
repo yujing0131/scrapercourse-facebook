@@ -26,17 +26,18 @@ time.sleep(5)
 
 driver.get('https://www.facebook.com/ETtodayMOVIE')
 #設定滑鼠滾輪的次數
-for i in range(1):
+for i in range(20):
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
     time.sleep(3)
 
 soup = BeautifulSoup(driver.page_source,'lxml')
 
 result=[]
-posts = soup.find_all("div" ,{"class":"x78zum5 xdt5ytf xz62fqu x16ldp7u"})
+posts = soup.find_all("div" ,{"class":"x1iorvi4 x1pi30zi x1l90r2v x1swvt13"})
+# print(posts)
 for post in posts:
-    content = post.find('span',{"class":"x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen xo1l8bm xzsf02u x1yc453h"})
-    print(content)
+    content = post.find(
+        "span",{"class":"x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen xo1l8bm xzsf02u x1yc453h"})
     result.append(content.getText())
 
 print(result)
